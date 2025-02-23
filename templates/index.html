@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Handwritten Digit Recognition</h1>
+        <div class="main-content">
+            
+            <!-- Upload Image Section -->
+            <div class="section" id="upload-section">
+                <h2>Upload Image</h2>
+                <input type="file" id="upload" accept="image/*">
+                <img id="uploadedImage" style="display:none; max-width: 100%; border: 2px solid #ddd; border-radius: 10px; margin-top: 10px;" />
+                <div class="buttons">
+                    <button id="predictImage" class="btn">Predict</button>
+                    <button id="clearImage" class="btn btn-clear">Clear</button>
+                </div>
+                <p id="resultImage" class="result"></p>
+            </div>
+
+            <!-- Drawing Canvas Section -->
+            <div class="section" id="canvas-section">
+                <h2>Draw Digit</h2>
+                <canvas id="canvas"></canvas>
+                <div class="buttons">
+                    <button id="predictCanvas" class="btn">Predict</button>
+                    <button id="clearCanvas" class="btn btn-clear">Clear</button>
+                </div>
+                <p id="resultCanvas" class="result"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
